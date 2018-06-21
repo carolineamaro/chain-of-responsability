@@ -1,6 +1,5 @@
 package com.github.carolineamaro.modelo;
 
-import com.github.carolineamaro.desconto.CalculadoraDeDesconto;
 import org.junit.*;
 import static org.junit.Assert.*;
 

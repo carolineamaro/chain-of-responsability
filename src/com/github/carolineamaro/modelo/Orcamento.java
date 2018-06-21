@@ -1,5 +1,8 @@
 package com.github.carolineamaro.modelo;
 
+import com.github.carolineamaro.desconto.Desconto;
+import com.github.carolineamaro.desconto.DescontoOrcamentoMaisDeDoisItens;
+import com.github.carolineamaro.desconto.DescontoOrcamentoValorMaiorQueSeisMil;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,12 +37,11 @@ public class Orcamento {
     }
     
     public double getValorDesconto(){
-        if(this.getItens().size() > 2){
-            return this.getValorTotal() * 0.05;
-        }else if(this.getValorTotal() > 6000.00){
-            return this.getValorTotal() * 0.10;
-        }else{
-            return 0;
-        }
+        Desconto maisDeDoisItens = new DescontoOrcamentoMaisDeDoisItens();
+        Desconto maiorQueSeisMil = new DescontoOrcamentoValorMaiorQueSeisMil();
+        
+        maisDeDoisItens.setProximo(maiorQueSeisMil);
+        
+        return maisDeDoisItens.getDesconto(this);
     }
 }
