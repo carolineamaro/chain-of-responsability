@@ -26,24 +26,24 @@ public class OrcamentoTest {
     public void testOrcamentoComDescontoDeCincoPorCento() {
         
         Orcamento orcamento = new Orcamento();
-        orcamento.addItem(new Produto("Televisão", 1500.00));
-        orcamento.addItem(new Produto("Caixa de som", 680.00));
-        orcamento.addItem(new Produto("Notebook", 3200.00));
+        orcamento.addItem(new Produto("Televisão", 1000.00));
+        orcamento.addItem(new Produto("Caixa de som", 500.00));
+        orcamento.addItem(new Produto("Notebook", 3500.00));
         
-        assertEquals(269.00, orcamento.getValorDesconto(), 0.001);
+        assertEquals(250.00, orcamento.getValorDesconto(), 0.001);
     }
     
     /**
-     * Toda compra com o valor total maior que 5 mil reais tem desconto de 10%
+     * Toda compra com o valor total maior que 6 mil reais tem desconto de 10%
      */
     @Test
     public void testOrcamentoComDescontoDeDezPorCento() {
         
         Orcamento orcamento = new Orcamento();
-        orcamento.addItem(new Produto("Computador", 4000.00));
+        orcamento.addItem(new Produto("Computador", 5000.00));
         orcamento.addItem(new Produto("Mouse", 1100.00));
         
-        assertEquals(510.00, orcamento.getValorDesconto(), 0.001);
+        assertEquals(610.00, orcamento.getValorDesconto(), 0.001);
     }
     
     
